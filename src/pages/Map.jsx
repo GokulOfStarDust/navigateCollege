@@ -7,7 +7,7 @@ import UseLocRoute from "./hook/UseLocRoute";
 export default function Map() {
   const start = { lat: 11.033746, lng: 77.034188 };
   const end = { lat: 11.0324860, lng: 77.0329760 };
-  const {Route, userPosition, setMapInstance} = UseLocRoute();
+  const {Route, userPosition, setMapInstance, startEndPos} = UseLocRoute();
 
   const userLocationIcon = L.divIcon({
     html: `
@@ -39,7 +39,7 @@ export default function Map() {
       <Marker position={start} />
       <Marker position={end} />
       {userPosition && <Marker position={userPosition} icon={userLocationIcon} />}
-      <Route />
+      <Route start={startEndPos.start} end={startEndPos.end} />
     </MapContainer>
   );
 }

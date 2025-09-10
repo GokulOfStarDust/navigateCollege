@@ -43,10 +43,6 @@ export default function InputSideMenu() {
 
   return (
     <section className='absolute sm:w-[80%] md:w-[50%] lg:w-[20%] bg-white z-[1200] top-10 right-0 border-radius-xl shadow-lg'>
-        <div onClick={flyToUserPosition}>
-            -&gt;
-        </div>
-
 
         <form id="loginForm" onSubmit={handleSubmit(formDataHandler)} className="flex flex-col gap-4 p-4 ">
             <div className="flex flex-col gap-y-0">
@@ -114,6 +110,22 @@ export default function InputSideMenu() {
                     }}
                     >
                         Search
+                </Button>
+            </div>
+            <div className="flex flex-row items-center p-2 rounded-b-xl">
+                <Button
+                    onClick={flyToUserPosition}
+                    variant="contained"
+                    sx={{
+                        width: '60%',
+                        height: '4vh',
+                        textTransform: 'none',
+                        backgroundColor: '#04B7B1',
+                        color: '#FFFFFF',
+                        '&:hover': { backgroundColor: '#03A6A0' },
+                    }}
+                    >
+                        Current Location
                 </Button>
             </div>
            

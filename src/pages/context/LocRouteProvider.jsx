@@ -5,22 +5,23 @@ export const locRouteContext = createContext();
 
 function LocRouteProvider({children}) {
 
-    const [route, setRoute] = useState(null);
     const [userPosition, setUserPosition] = useState(null);
     const [startEndPos, setStartEndPos] = useState({start: { lat: 11.0324860, lng: 77.0329760 }, end: { lat: 11.033746, lng: 77.034188 }});
     const [mapInstance, setMapInstance] = useState(null);
-    const GRASSHOPPER_API_KEY = '72b08d8f-b8e1-439f-9b83-409939c0e84a';
+
     const flyToUserPosition = () => {
       if(mapInstance && userPosition){
         mapInstance.flyTo(userPosition, 16, { duration: 2 });
       }
     };
 
-    function Route() {
+    function Route({start, end}) {
+      const [route, setRoute] = useState(null);
+
       useEffect(() => {
         async function fetchRoute() {
           try {
-            const url = `https://router.project-osrm.org/route/v1/driving/${startEndPos.start.lng},${startEndPos.start.lat};${startEndPos.end.lng},${startEndPos.end.lat}?overview=full&geometries=geojson`;
+            const url = `https://router.project-osrm.org/route/v1/driving/${start.lng},${start.lat};${end.lng},${end.lat}?overview=full&geometries=geojson`;
             const res = await fetch(url);
             const data = await res.json();
 
@@ -36,7 +37,8 @@ function LocRouteProvider({children}) {
         }
 
         fetchRoute();
-      }, [startEndPos])
+      }, [start, end]);
+
       return route ? <Polyline positions={route} color="blue" /> : null;
     }
 
@@ -58,7 +60,7 @@ function LocRouteProvider({children}) {
     },[])
 
   return (
-    <locRouteContext.Provider value={{ Route, userPosition, setMapInstance, flyToUserPosition, setStartEndPos}}>
+    <locRouteContext.Provider value={{ Route, userPosition, setMapInstance, flyToUserPosition, setStartEndPos, startEndPos}}>
         {children}
     </locRouteContext.Provider>
   )
