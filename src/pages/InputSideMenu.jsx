@@ -18,6 +18,8 @@ import UseLocRoute from './hook/UseLocRoute';
 
 export default function InputSideMenu() {
 
+    const [isSearchOpen, setIsSearchOpen] = React.useState(true);
+
     const LOCATIONS = {
         'Brahmam Hall' : { lat: 11.0324860, lng: 77.0329760 },
         'GRD Auditorium' : { lat: 11.033746, lng: 77.034188}
@@ -44,7 +46,12 @@ export default function InputSideMenu() {
   return (
     <section className='absolute sm:w-[80%] md:w-[50%] lg:w-[20%] bg-white z-[1200] top-10 right-0 border-radius-xl shadow-lg'>
 
-        <form id="loginForm" onSubmit={handleSubmit(formDataHandler)} className="flex flex-col gap-4 p-4 ">
+        <div className='font-bold text-xl p-4 border-b border-gray-200'
+        onClick={()=>setIsSearchOpen(!isSearchOpen)}>
+            |<br/>v
+        </div>
+
+        <form id="loginForm" onSubmit={handleSubmit(formDataHandler)} className={`flex flex-col gap-4 p-4 ${isSearchOpen ? 'block' : 'hidden'}`}>
             <div className="flex flex-col gap-y-0">
                 <Typography variant="body2" sx={{ mb: 0.5, color: '#616161' }}>
                     From
