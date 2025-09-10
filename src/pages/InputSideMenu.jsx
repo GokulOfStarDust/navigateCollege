@@ -21,8 +21,13 @@ export default function InputSideMenu() {
     const [isSearchOpen, setIsSearchOpen] = React.useState(true);
 
     const LOCATIONS = {
-        'Brahmam Hall' : { lat: 11.0324860, lng: 77.0329760 },
-        'GRD Auditorium' : { lat: 11.033746, lng: 77.034188}
+
+        'Entrance' : { lat: 11.034783, lng: 77.033802 },
+        'Brahmam Hall' : { lat: 11.034228, lng: 77.033987 },
+        'GRD Auditorium' : { lat: 11.033746, lng: 77.034188 },
+        'E-Block' : { lat: 11.032880, lng: 77.034473 },
+        'Food Court - 1' : { lat: 11.033733, lng: 77.034293 },
+        'daffodil' : { lat: 11.033130, lng: 77.035111 },
     }
 
     const {
@@ -71,6 +76,10 @@ export default function InputSideMenu() {
                         <MenuItem value="userLocation">Your location</MenuItem>
                         <MenuItem value="Brahmam Hall">Brahmam Hall</MenuItem>
                         <MenuItem value="GRD Auditorium">GRD Auditorium</MenuItem>
+                        <MenuItem value="E-Block">E-Block</MenuItem>
+                        <MenuItem value="Food Court - 1">Food Court - 1</MenuItem>
+                        <MenuItem value="Entrance">Entrance</MenuItem>
+                        <MenuItem value="daffodil">Daffodil</MenuItem>
                         </Select>
                         {error && <span className="text-red-500 text-sm">{error.message}</span>}
                     </FormControl>
@@ -95,6 +104,10 @@ export default function InputSideMenu() {
                         <MenuItem value='' disabled></MenuItem>                        
                         <MenuItem value="Brahmam Hall">Brahmam Hall</MenuItem>
                         <MenuItem value="GRD Auditorium">GRD Auditorium</MenuItem>
+                        <MenuItem value="E-Block">E-Block</MenuItem>
+                        <MenuItem value="Food Court - 1">Food Court - 1</MenuItem>
+                        <MenuItem value="Entrance">Entrance</MenuItem>
+                        <MenuItem value="daffodil">Daffodil</MenuItem>
                         </Select>
                         {error && <span className="text-red-500 text-sm">{error.message}</span>}
                     </FormControl>
