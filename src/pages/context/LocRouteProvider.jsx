@@ -3,19 +3,7 @@ import { Polyline, useMap } from "react-leaflet";
 
 export const locRouteContext = createContext();
 
-function LocRouteProvider({children}) {
-
-    const [userPosition, setUserPosition] = useState(null);
-    const [startEndPos, setStartEndPos] = useState({start: { lat: 11.0324860, lng: 77.0329760 }, end: { lat: 11.033746, lng: 77.034188 }});
-    const [mapInstance, setMapInstance] = useState(null);
-
-    const flyToUserPosition = () => {
-      if(mapInstance && userPosition){
-        mapInstance.flyTo(userPosition, 16, { duration: 2 });
-      }
-    };
-
-    function Route({start, end}) {
+function Route({start, end}) {
       const [route, setRoute] = useState(null);
 
       useEffect(() => {
@@ -41,7 +29,19 @@ function LocRouteProvider({children}) {
       }, [start, end]);
 
       return route ? <Polyline positions={route} color="blue" /> : null;
-    }
+}
+
+function LocRouteProvider({children}) {
+
+    const [userPosition, setUserPosition] = useState(null);
+    const [startEndPos, setStartEndPos] = useState({start: { lat: 11.0324860, lng: 77.0329760 }, end: { lat: 11.033746, lng: 77.034188 }});
+    const [mapInstance, setMapInstance] = useState(null);
+
+    const flyToUserPosition = () => {
+      if(mapInstance && userPosition){
+        mapInstance.flyTo(userPosition, 16, { duration: 2 });
+      }
+    };
 
     useEffect(()=>{
       if(!navigator.geolocation) alert("Geolocation not supported by browser!")
