@@ -46,9 +46,9 @@ export default function InputSideMenu() {
   return (
     <section className='absolute sm:w-[80%] md:w-[50%] lg:w-[20%] bg-white z-[1200] top-10 right-0 border-radius-xl shadow-lg'>
 
-        <div className='font-bold text-xl p-4 border-b border-gray-200'
+        <div className='font-bold text-xl p-4 border-b border-gray-200 hover:cursor-pointer'
         onClick={()=>setIsSearchOpen(!isSearchOpen)}>
-            |<br/>v;
+            {isSearchOpen ? "---" : "+"}
         </div>
 
         <form id="loginForm" onSubmit={handleSubmit(formDataHandler)} className={`flex flex-col gap-4 p-4 ${isSearchOpen ? 'block' : 'hidden'}`}>

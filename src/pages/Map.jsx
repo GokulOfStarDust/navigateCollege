@@ -25,6 +25,13 @@ export default function Map() {
     iconAnchor: [8, 8], // center the dot
   });
 
+  delete L.Icon.Default.prototype._getIconUrl;
+  L.Icon.Default.mergeOptions({
+  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+});
+
 
 
   return (
@@ -36,8 +43,8 @@ export default function Map() {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; OpenStreetMap contributors"
       />
-      <Marker position={start} />
-      <Marker position={end} />
+      <Marker position={startEndPos.start} />
+      <Marker position={startEndPos.end} />
       {userPosition && <Marker position={userPosition} icon={userLocationIcon} />}
       <Route start={startEndPos.start} end={startEndPos.end} />
     </MapContainer>
