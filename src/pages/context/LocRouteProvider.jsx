@@ -30,6 +30,7 @@ function LocRouteProvider({children}) {
                 ([lng, lat]) => [lat, lng]
               );
               setRoute(coords);
+              alert("Route fetched successfully!");
             }
           } catch (err) {
             console.error('Failed to fetch route:', err);
