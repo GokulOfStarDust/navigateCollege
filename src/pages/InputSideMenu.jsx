@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {
   TextField,
   Select,
@@ -35,12 +35,35 @@ export default function InputSideMenu() {
     });
 
     const {flyToUserPosition, setStartEndPos, userPosition} = UseLocRoute();
+    const [CurrentPosition, setCurrentPosition] = useState(null);
+
+    const getCurrPos = () => {
+        if (navigator.geolocation) {
+
+            navigator.geolocation.getCurrentPosition(
+            (pos) => console.log("Success!", pos),
+            (err) => console.error("Error:", err)
+            );
+
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+
+    useEffect(() => {
+        if(CurrentPosition){
+            console.log("Current Position updated:", CurrentPosition);
+            setStartEndPos({ start: CurrentPosition, end: LOCATIONS[data.To] });
+        }
+    }, [CurrentPosition]);
 
     const formDataHandler = (data) => {
-
-        const startPos = data.From === 'userLocation' ? { lat: userPosition[0], lng: userPosition[1] } : LOCATIONS[data.From];
-
-        setStartEndPos({ start: startPos, end: LOCATIONS[data.To] });
+        if(data.From == 'userLocation'){
+            getCurrPos();
+        } else {
+            const startPos = LOCATIONS[data.From];
+            setStartEndPos({ start: startPos, end: LOCATIONS[data.To] });
+        }
     };
 
   return (
