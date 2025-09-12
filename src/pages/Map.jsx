@@ -40,7 +40,7 @@ export default function Map() {
     ref={setMapInstance}
     >
       <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?fresh=${Date.now()}`}
         attribution="&copy; OpenStreetMap contributors"
       />
       <Marker position={startEndPos.start} />

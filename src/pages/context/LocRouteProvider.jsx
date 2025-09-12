@@ -9,7 +9,7 @@ function Route({start, end}) {
       useEffect(() => {
         async function fetchRoute() {
           try {
-            const url = `https://router.project-osrm.org/route/v1/driving/${start.lng},${start.lat};${end.lng},${end.lat}?overview=full&geometries=geojson`;
+            const url = `https://router.project-osrm.org/route/v1/foot/${start.lng},${start.lat};${end.lng},${end.lat}?overview=full&geometries=geojson`;
             const res = await fetch(url);
             const data = await res.json();
 
