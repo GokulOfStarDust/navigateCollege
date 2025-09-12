@@ -36,11 +36,11 @@ export default function Map() {
 
   return (
     <MapContainer 
-    className="relative" center={start} zoom={17} style={{ height: "100vh", width: "100%" }}
+    className="relative" center={start} zoom={19} style={{ height: "100vh", width: "100%" }}
     ref={setMapInstance}
     >
       <TileLayer
-        url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?fresh=${Date.now()}`}
+        url={`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?ts=1757702116027`}
         attribution="&copy; OpenStreetMap contributors"
       />
       <Marker position={startEndPos.start} />
