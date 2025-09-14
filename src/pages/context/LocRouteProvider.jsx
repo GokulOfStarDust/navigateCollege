@@ -42,7 +42,7 @@ function Route({start, end}) {
 function LocRouteProvider({children}) {
 
     const [userPosition, setUserPosition] = useState(null);
-    const [startEndPos, setStartEndPos] = useState({start: { lat: 11.0324860, lng: 77.0329760 }, end: { lat: 11.033746, lng: 77.034188 }});
+    const [startEndPos, setStartEndPos] = useState({start: { lat: 11.0324860, lng: 77.0329760 }, end: { lat: 11.032390, lng: 77.033279 }});
     const [mapInstance, setMapInstance] = useState(null);
 
     const flyToUserPosition = () => {
