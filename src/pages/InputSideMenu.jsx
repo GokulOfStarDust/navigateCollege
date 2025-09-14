@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
   TextField,
   Select,
@@ -18,7 +18,7 @@ import UseLocRoute from './hook/UseLocRoute';
 
 export default function InputSideMenu() {
 
-    const [isSearchOpen, setIsSearchOpen] = React.useState(true);
+    const [isSearchOpen, setIsSearchOpen] = useState(true);
 
     const LOCATIONS = {
 

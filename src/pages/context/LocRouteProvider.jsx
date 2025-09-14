@@ -1,10 +1,12 @@
 import { useEffect, useState, useContext,createContext } from "react";
 import { Polyline, useMap } from "react-leaflet";
+import UseLocRoute from "../hook/UseLocRoute";
 
 export const locRouteContext = createContext();
 
 function Route({start, end}) {
       const [route, setRoute] = useState(null);
+      const {mapInstance} = UseLocRoute();
 
       useEffect(() => {
         async function fetchRoute() {
@@ -17,6 +19,12 @@ function Route({start, end}) {
               const coords = data.routes[0].geometry.coordinates.map(
                 ([lng, lat]) => [lat, lng]
               );
+
+              
+            if(mapInstance){
+              mapInstance.flyTo([start.lat, start.lng], 16, { duration: 2 });
+            }
+
               setRoute(coords);
               alert("Route fetched successfully!");
             }
@@ -61,7 +69,7 @@ function LocRouteProvider({children}) {
     },[])
 
   return (
-    <locRouteContext.Provider value={{ Route, userPosition, setMapInstance, flyToUserPosition, setStartEndPos, startEndPos}}>
+    <locRouteContext.Provider value={{ Route, userPosition, mapInstance, setMapInstance, flyToUserPosition, setStartEndPos, startEndPos}}>
         {children}
     </locRouteContext.Provider>
   )
