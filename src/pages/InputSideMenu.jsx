@@ -24,10 +24,19 @@ export default function InputSideMenu() {
 
         'Entrance' : { lat: 11.034783, lng: 77.033802 },
         'Brahmam Hall' : { lat: 11.034228, lng: 77.033987 },
-        'GRD Auditorium' : { lat: 11.033746, lng: 77.034188 },
-        'E-Block' : { lat: 11.032880, lng: 77.034473 },
+        'GRD Auditorium' : { lat: 11.032390, lng: 77.033279 },
+        'E-Block' : { lat: 11.032880, lng: 77.034473 }, 
+        'Aided Office - G Floor' : { lat: 11.033190, lng: 77.034094 },
+        'Indoor Stadium' : { lat: 11.033656, lng: 77.035304 },
+        'SF Office' : { lat: 11.033085, lng: 77.033445 },
+        'Podhigai Hall' : { lat: 11.033406, lng: 77.033290 },
         'Food Court - 1' : { lat: 11.033733, lng: 77.034293 },
-        'daffodil' : { lat: 11.033130, lng: 77.035111 },
+        'Food Court - 2' : { lat: 11.032024, lng: 77.032622 },
+        "Men's Restroom - 1" : { lat: 11.034067, lng: 77.034277 },
+        "Men's Restroom - 2" : { lat: 11.032058, lng: 77.034127 },
+        "Women's Restroom - 1" : { lat: 11.034209, lng: 77.034242 },
+        "Women's Restroom - 2" : { lat: 11.032211, lng: 77.033467 },
+        'daffodil' : { lat: 11.032932, lng: 77.035521 },
     }
 
     const {
@@ -80,6 +89,16 @@ export default function InputSideMenu() {
                         <MenuItem value="Food Court - 1">Food Court - 1</MenuItem>
                         <MenuItem value="Entrance">Entrance</MenuItem>
                         <MenuItem value="daffodil">Daffodil</MenuItem>
+                        <MenuItem value="Aided Office - G Floor">Aided Office - G Floor</MenuItem>
+                        <MenuItem value="Indoor Stadium">Indoor Stadium</MenuItem>
+                        <MenuItem value="SF Office">SF Office</MenuItem>
+                        <MenuItem value="Podhigai Hall">Podhigai Hall</MenuItem>
+                        <MenuItem value="Food Court - 2">Food Court - 2</MenuItem>
+                        <MenuItem value="Men's Restroom - 1">Men's Restroom - 1</MenuItem>
+                        <MenuItem value="Women's Restroom - 1">Women's Restroom - 1</MenuItem>
+                        <MenuItem value="Men's Restroom - 2">Men's Restroom - 2</MenuItem>
+                        <MenuItem value="Women's Restroom - 2">Women's Restroom - 2</MenuItem>
+
                         </Select>
                         {error && <span className="text-red-500 text-sm">{error.message}</span>}
                     </FormControl>
@@ -108,6 +127,16 @@ export default function InputSideMenu() {
                         <MenuItem value="Food Court - 1">Food Court - 1</MenuItem>
                         <MenuItem value="Entrance">Entrance</MenuItem>
                         <MenuItem value="daffodil">Daffodil</MenuItem>
+                        <MenuItem value="Aided Office - G Floor">Aided Office - G Floor</MenuItem>
+                        <MenuItem value="Indoor Stadium">Indoor Stadium</MenuItem>
+                        <MenuItem value="SF Office">SF Office</MenuItem>
+                        <MenuItem value="Podhigai Hall">Podhigai Hall</MenuItem>
+                        <MenuItem value="Food Court - 2">Food Court - 2</MenuItem>
+                        <MenuItem value="Men's Restroom - 1">Men's Restroom - 1</MenuItem>
+                        <MenuItem value="Women's Restroom - 1">Women's Restroom - 1</MenuItem>
+                        <MenuItem value="Men's Restroom - 2">Men's Restroom - 2</MenuItem>
+                        <MenuItem value="Women's Restroom - 2">Women's Restroom - 2</MenuItem>
+
                         </Select>
                         {error && <span className="text-red-500 text-sm">{error.message}</span>}
                     </FormControl>
