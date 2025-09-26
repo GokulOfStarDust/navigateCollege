@@ -1,12 +1,101 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Navigate College - Interactive Campus Map
 
-Currently, two official plugins are available:
+Navigate College is a modern, interactive web application designed to help students and visitors navigate a college campus with ease. This particular implementation is tailored for the PSG College of Arts and Science, but it can be adapted for other campuses.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+*   **Interactive Campus Map**: A smooth and responsive map of the PSG CAS campus, powered by Leaflet and OpenStreetMap.
+*   **Real-time Routing**: Find the shortest path between two locations on campus.
+*   **Your Location**: Use your current location as the starting point for navigation.
+*   **Location Search**: Easily search for and select from a list of predefined locations within PSG CAS.
+*   **Fly to Location**: Instantly move the map view to your current location.
+*   **Modern UI**: A clean and intuitive user interface built with React, Tailwind CSS, and Material-UI.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Technologies Used
+
+*   **Frontend**:
+    *   [React](https://reactjs.org/)
+    *   [Vite](https://vitejs.dev/)
+    *   [Tailwind CSS](https://tailwindcss.com/)
+    *   [Material-UI](https://mui.com/)
+*   **Map & Routing**:
+    *   [Leaflet](https://leafletjs.com/)
+    *   [React-Leaflet](https://react-leaflet.js.org/)
+    *   [OSRM (Open Source Routing Machine)](http://project-osrm.org/)
+*   **Language**:
+    *   JavaScript (ES6+)
+
+## 📦 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+*   Node.js and npm (or yarn) installed on your machine.
+
+### Installation
+
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/your-username/navigateCollege.git
+    ```
+2.  **Navigate to the project directory:**
+    ```sh
+    cd navigateCollege
+    ```
+3.  **Install NPM packages:**
+    ```sh
+    npm install
+    ```
+
+### Running the Application
+
+1.  **Start the development server:**
+    ```sh
+    npm run dev
+    ```
+2.  **Open your browser** and navigate to `http://localhost:5173` (or the address shown in your terminal).
+
+## USAGE
+
+1.  **Select a starting location** from the "From" dropdown. You can also choose "Your location" to use your current geographical position within the campus.
+2.  **Select a destination** within PSG CAS from the "To" dropdown.
+3.  **Click the "Search" button** to see the route drawn on the map.
+4.  **Click the "Current Location" button** to center the map on your current position.
+
+## 📂 Project Structure
+
+```
+/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── pages/
+│   │   ├── context/
+│   │   │   └── LocRouteProvider.jsx
+│   │   ├── hook/
+│   │   │   └── UseLocRoute.jsx
+│   │   ├── InputSideMenu.jsx
+│   │   └── Map.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── package.json
+├── README.md
+...
+```
+
+### Key Files
+
+*   `src/main.jsx`: The entry point of the application.
+*   `src/App.jsx`: The main component that lays out the application.
+*   `src/pages/Map.jsx`: Renders the interactive map of the PSG CAS campus.
+*   `src/pages/InputSideMenu.jsx`: The side menu for user input.
+*   `src/pages/context/LocRouteProvider.jsx`: The context provider for managing application state.
+*   `src/pages/hook/UseLocRoute.jsx`: A custom hook for accessing the location and route context.
+
+---
+
+Enjoy navigating the PSG CAS campus with ease! 🗺️

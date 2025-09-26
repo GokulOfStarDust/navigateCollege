@@ -35,7 +35,7 @@ export default function Map() {
 
   return (
     <MapContainer 
-    className="relative" center={start} zoom={19} style={{ height: "100vh", width: "100%" }}
+    className="relative" center={start} zoom={30} style={{ height: "100vh", width: "100%" }}
     ref={setMapInstance}
     >
       <TileLayer
