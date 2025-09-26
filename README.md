@@ -1,4 +1,3 @@
-
 # Navigate College - Interactive Campus Map
 
 Navigate College is a modern, interactive web application designed to help students and visitors navigate a college campus with ease. This particular implementation is tailored for the PSG College of Arts and Science, but it can be adapted for other campuses.
@@ -64,6 +63,18 @@ To get a local copy up and running, follow these simple steps.
 3.  **Click the "Search" button** to see the route drawn on the map.
 4.  **Click the "Current Location" button** to center the map on your current position.
 
+## 🔧 Customization
+
+This project is designed to be adaptable for any college campus. Here's how you can customize it for your own use:
+
+1.  **Contribute to OpenStreetMap**:
+    *   For the best routing results, your campus map data should be on [OpenStreetMap](https://www.openstreetmap.org/).
+    *   You can use tools like [JOSM](https://josm.openstreetmap.de/) or the web-based iD editor to add or edit your campus buildings, pathways, and points of interest.
+
+2.  **Update Location Coordinates**:
+    *   The list of locations is hardcoded in the `src/pages/InputSideMenu.jsx` file.
+    *   You will need to update the `LOCATIONS` object with the names and coordinates of the locations on your campus.
+
 ## 📂 Project Structure
 
 ```
@@ -98,4 +109,4 @@ To get a local copy up and running, follow these simple steps.
 
 ---
 
-Enjoy navigating the PSG CAS campus with ease! 🗺️
+Enjoy navigating your campus with ease! 🗺️
